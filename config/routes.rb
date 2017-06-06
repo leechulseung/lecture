@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
-  root 'leboard#lb'
+  root 'home#main'
+  
+  get 'home/index'
+
+  get 'mypage/mp'
+
+  get 'mypage/cpg'
+
+  get 'board/lb'
+  
+  get 'board/qb'
+  
+  get 'board/cb' => 'board#cb'
+  
+  get '/home/index' => 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

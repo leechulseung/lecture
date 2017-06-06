@@ -1,0 +1,45 @@
+<head>
+	<style>
+		body{
+			background-image : url("/assets/home-bg.jpg");
+			background-size:cover;
+		}
+		
+		#intro{
+			margin-top : 100px;
+		}
+		
+		label{
+			color : white;
+		}
+	</style>
+</head>
+
+<body>
+    <section id="intro" class="d-flex flex-column justify-content-center align-items-center">
+    <img class="mb-5 mb-lg-0" style="width: 10rem;" src="/assets/logo2.png" alt="logo" />
+
+     <font class="font-weight-bold">상지대학교 강의평가</font>
+   
+
+    <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="gGpCbM212uXkoWMEfbRIh/b0dGVytSXDx26ybFNQxPBg4WjIU9wnKia0hI8akfj/JyWyrbZTFWa7+va1A+Jbuw==" />
+      <div class="form-group">
+        <div class="field">
+          <label for="user_email" class="text-uppercase">아이디</label>
+          <input autofocus="autofocus" class="form-control form-control-lg" placeholder="아이디를 입력하세요" tabindex="1" type="id" value="" name="user[id]" id="user_id" />
+        </div>
+
+        <div class="field">
+          <label for="user_password" class="text-uppercase">비밀번호</label> <span class="float-right">  <a href="/users/password/new">비밀번호, 잊으셨나요?</a>
+</span>
+          <input autocomplete="off" class="form-control form-control-lg" placeholder="비밀번호를 입력하세요" tabindex="2" type="password" name="user[password]" id="user_password" />
+        </div>
+
+        <div class="actions text-center">
+          <input type="submit" name="commit" value="로그인" class="text-uppercase btn btn-secondary" data-disable-with="Login" />
+        </div>
+      </div>
+</form>
+<section>
+
+</body>
