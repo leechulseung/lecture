@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get 'board/cb' => 'board#cb'
   
   get '/home/index' => 'home#index'
+  
+  #자유게시판 글쓰기
+  get '/board/newcb' => 'board#newcb'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

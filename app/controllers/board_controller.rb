@@ -8,4 +8,7 @@ class BoardController < ApplicationController
   
   def qb #질문 게시판
   end
+  
+  def newcb #자유게시판 글쓰기
+  end
 end
