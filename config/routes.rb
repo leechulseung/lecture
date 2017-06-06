@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  root 'home#main'
+  devise_for :admins
+  devise_for :users
+  
+  # devise_scope :user do
+  #   root 'devise/sessions#new'
+  # end
+  get 'home/main'
   
   get 'home/index'
 
@@ -13,7 +19,8 @@ Rails.application.routes.draw do
   
   get 'board/cb' => 'board#cb'
   
-  get '/home/index' => 'home#index'
+  # root 'home#index'
+  root 'home#main'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
