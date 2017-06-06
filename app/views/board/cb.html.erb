@@ -38,36 +38,29 @@
   </div>
 </nav>
 <!-- 네비바 끝-->
+
 <h1 class="jua text-center mt-5">자유 게시판</h1>
 <div class="container">
   <table class="table">
     <thead class="thead-default">
     <tr>
-      <th>#</th>
+      <th></th>
       <th>제목</th>
       <th>내용</th>
       <th>닉네임</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>배가아파요</td>
-      <td>똥쌀까요?</td>
-      <td>kwon</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>무운기시러요</td>
-      <td>띠껍짱</td>
-      <td>sen</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>손시리재산압류</td>
-      <td>인간적으로..</td>
-      <td>10조는 너무하자나...</td>
-    </tr>
+    <% i=1 %>
+      <% @cbb.each do |x| %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><a href="/board/cshow/<%= x.id %>"><%= x.title %></a></td>
+        <td><a href="/board/cshow/<%= x.id %>"><%= x.content %></a></td>
+        <td><%= x.ids %></td>
+      </tr>
+      <% i+=1 %>
+      <% end %>
   </tbody>
 </table>
 

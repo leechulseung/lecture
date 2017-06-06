@@ -49,28 +49,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>배가아파요</td>
-      <td>똥쌀까요?</td>
-      <td>kwon</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>무운기시러요</td>
-      <td>띠껍짱</td>
-      <td>sen</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>손시리재산압류</td>
-      <td>인간적으로..</td>
-      <td>10조는 너무하자나...</td>
-    </tr>
+    <% i=1 %>
+      <% @qbb.each do |x| %>
+        <tr>
+          <th scope="row"><%= i %></th>
+          <td><a href="/posts/show/<%= x.id %>"><%= x.title %></a></td>
+          <td><a href="/posts/show/<%= x.id %>"><%= x.content %></a></td>
+          <td><%= x.ids %></td>
+        </tr>
+        <% i+=1 %>
+      <% end %>
   </tbody>
 </table>
-<form>
-  <button type="button" class="btn btn-outline-primary">글쓰기</button>
+<form action="/board/newqb">
+  <button type="submit" class="btn btn-outline-primary">글쓰기</button>
 </form>
 </div>
 
