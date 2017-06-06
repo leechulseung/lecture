@@ -10,13 +10,33 @@ Rails.application.routes.draw do
 
 
   
-  get 'board/qb'
+  get '/board/qb' => 'board#qb'
   
-  get 'board/cb' => 'board#cb'
+  get '/board/cb' => 'board#cb'
   
   get '/home/index' => 'home#index'
   
-  #강의평가 게시판
+  #자유게시판 글쓰기
+  get '/board/newcb' => 'board#newcb'
+  post '/board/create' => 'board#create'
+  
+  #Q&A 글쓰기
+  get '/board/newqb' => 'board#newqb'
+  post '/board/qcreate' => 'board#qcreate'
+  
+  #자유게시판show
+  get '/board/cshow/:board_id' => 'board#cshow'
+  #Q&A show
+  get '/board/qshow' => 'board#qshow'
+  
+  #자유게시판 삭제
+  post '/board/cdestroy/:board_id' => 'board#cdestroy'
+  
+  #자유게시판 수정
+  get '/board/cedit/:board_id' => 'board#cedit'
+  post '/board/cupdate/:board_id' => 'board#cupdate'
+  
+   #강의평가 게시판
   ## 게시판 URL
   get '/board/lb' #교양 게시판 
   get '/board/lbbs1' => 'board#lb' #크리에이트 리다이렉트를 위하여 만든 url
