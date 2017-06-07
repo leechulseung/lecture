@@ -1,7 +1,10 @@
+<% @user.errors.full_messages %>
+<% @user.errors.messages %>
+
 <link href="/assets/session_login.css" rel="stylesheet">
 
 <section class="section_login">
-  <div class="d-flex justify-content-center align-items-center login_height">
+  <div class="d-flex justify-content-center align-items-center login_height col-12">
     <div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-group field row">

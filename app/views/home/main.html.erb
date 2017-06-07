@@ -17,13 +17,28 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/board/qb">Q&A 게시판</a>
-      </li>     
-      <li class="nav-item">
-        <a class="nav-link" href="/mypage/mp">내정보</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/users/sign_out" data-method="delete">로그아웃</a>
-      </li>
+      
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <a class="nav-link" href="/mypage/mp">내정보</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/mypage/mp"><%=current_user.email%></a>
+        </li>
+        
+        <% if current_user.admin %>
+          <li class="nav-item">
+            <a class="nav-link" href="#">관리자</a>
+          </li>
+        <% end %>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/users/sign_out" data-method="delete">로그아웃</a>
+        </li>
+      <%end%>
+      
     </ul>
   </div>
 </nav>
@@ -35,11 +50,12 @@
 		<h1 class="jua color-white">상지대학교 강의평가 사이트에 오신걸 환영합니다!</h1>
 	</section>
 <footer class="text-center">
+  
 	<div class="">
-    	<div class="container">
-        	<p> Team: 권현우 | <a href="#"></a> 이철승 | <a href="#">오제웅</a></p>
-        	<p>Copyright &copy; 2017 </p>
-        </div>
-    </div>	
+  	<div class="container">
+      	<p> Team: 권현우 | <a href="#"></a> 이철승 | <a href="#">오제웅</a></p>
+      	<p>Copyright &copy; 2017 </p>
+    </div>
+  </div>	
 </footer>
         
