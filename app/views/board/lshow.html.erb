@@ -100,14 +100,19 @@
         <input class="col-1 ml-1" type="submit" value="commit">
   		   </form>
   		<div class="card col-11">
-        <div class="card-block col-11">
-  		  <% @com.each do |c| %>
-        <p class="col-8 float-left"><%= c.content%></p>
-        <p class="col-2 float-left"> <%= c.created_at.strftime("%y/%m/%d") %></p>
-        <a class="col-2 float-left"href="/board/lshow/<%=@pname%>/<%= @post.id%>/lcomment/lcom_destroy/<%=c.id%>">삭제</a>
-        <% end %>
+        <div class="card-block col-12">
+    		  <% @com.each do |c| %>
+      		  <div class="clearfix">
+      		    <p class="col-2 float-left mt-1 mb-0"><%= c.user.nickname%></p>
+              <p class="col-6 float-left mt-1 mb-0"><%= c.content%></p>
+              <p class="col-2 float-left mt-1 mb-0"><%= c.created_at.strftime("%y/%m/%d") %></p>
+              <% if c.user == current_user || current_user.admin%>
+                <a class="col-2 float-left mt-1 mb-0"href="/board/lshow/<%=@pname%>/<%= @post.id%>/lcomment/lcom_destroy/<%=c.id%>">삭제</a>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-        </div>
+      </div>
     </div>
 </div>
 </div>

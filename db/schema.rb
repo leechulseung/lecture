@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20170606115452) do
 
   create_table "cbbs", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "ids"
     t.string   "title"
     t.text     "content"
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170606115452) do
   end
 
   create_table "lcoms", force: :cascade do |t|
+    t.integer  "user_id"
     t.integer  "lbbs1_id"
     t.text     "content"
     t.datetime "created_at", null: false
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 20170606115452) do
   end
 
   create_table "qbbs", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "ids"
     t.string   "title"
     t.text     "content"

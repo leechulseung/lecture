@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+         
+  has_many  :cbbs
+  has_many  :lcoms
+  has_many  :qbbs
   
   #포멧터
   # validates_format_of	:email, :with => /^[a-zA-Z0-9_]{6,30}$/, :message => "이메일 영문과 숫자 4~20자만 가능합니다."

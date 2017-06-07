@@ -26,7 +26,7 @@ class BoardController < ApplicationController
     @com = Lcom.where(lbbs1_id: params[:bbs_id])
   end
   
-  def ldestroy #강의 폐광 메소드
+  def ldestroy #강의 폐강 메소드
     @post = params[:bbs].capitalize.constantize.find(params[:bbs_id])
     @post.destroy
     redirect_to "/board/#{params[:bbs]}"
@@ -40,11 +40,12 @@ class BoardController < ApplicationController
   end
   
   def create  #자유게시판 db접근
-        @cbbs = Cbb.new
-        @cbbs.title = params[:title]
-        @cbbs.content = params[:contents]
-        @cbbs.save
-        redirect_to '/board/cb'
+      @cbbs = Cbb.new
+      @cbbs.title = params[:title]
+      @cbbs.content = params[:contents]
+      @cbbs.user_id = current_user.id
+      @cbbs.save
+      redirect_to '/board/cb'
   end
   
   def newcb #자유게시판 글쓰기
@@ -81,6 +82,7 @@ class BoardController < ApplicationController
         @qbb = Qbb.new
         @qbb.title = params[:title]
         @qbb.content = params[:contents]
+        @qbb.user_id = current_user.id
         @qbb.save
         
         redirect_to '/board/qb'
