@@ -1,17 +1,15 @@
-<% @user.errors.full_messages %>
-<% @user.errors.messages %>
-
 <link href="/assets/session_login.css" rel="stylesheet">
 
 <section class="section_login">
   <div class="d-flex justify-content-center align-items-center login_height col-12">
     <div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-group field row">
+        <div class="form-group field ">
           <%= f.label :email, class: 'font-color' %>
+          <span class="float-right" style="color: red;"><%=flash[:alert]%></span>
           <%= f.email_field :email, autofocus: true, class: 'form-control'%>
         </div>
-        <div class="form-group field row">
+        <div class="form-group field ">
           <%= f.label :password, class: 'font-color' %>
           <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
         </div>
