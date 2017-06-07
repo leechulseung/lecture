@@ -1,4 +1,5 @@
 class BoardController < ApplicationController
+  before_action :authenticate_user!
   
   #강의평가 게시판
   def lb #강의평가 메인(교양)

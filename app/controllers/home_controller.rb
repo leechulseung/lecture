@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
-  def index#로그인
-  end
-
+  before_action :authenticate_user!
+  # before_action :authenticate_admin
+  
   def main
   end
 end

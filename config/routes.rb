@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'home#main'
+  devise_for :users
+  get 'home/main'
+
   
   get 'home/index'
 
@@ -50,6 +52,9 @@ Rails.application.routes.draw do
   #COMMENT URL
   get '/board/lshow/:bbs/:bbs_id/lcomment/lcom_create' => 'lcomment#lcom_create'
   get '/board/lshow/:bbs/:bbs_id/lcomment/lcom_destroy/:com_id' => 'lcomment#lcom_destroy'
+
+  # root 'home#index'
+  root 'home#main'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
