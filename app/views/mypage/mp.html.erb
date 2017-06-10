@@ -50,9 +50,9 @@
         <h1 class="mt-5">회원정보 수정</h1>
         <form>
           <div class="form-group">
-            <label for="Email">Email</label>
-            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted col-lg 10">e-mail cahange</small>
+            <label for="Email">닉네임</label>
+            <input type="text" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted col-lg 10"> </small>
           </div>
           <button type="submit" class="btn btn-primary">변경</button>
         </form>  
@@ -66,52 +66,52 @@
         </form>
         
         <form>
-          <div class="form-group">
-            <label for="Password">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <div class="form-group mt-3">
           </div>
-          <button type="submit" class="btn btn-primary">변경</button>
+          <button type="submit" class="btn btn-primary" data-confirm="정말 탈퇴하시겠습니까?" >탈퇴</button>
         </form>
         <p></p>
     </div>
-    <div class="col-lg-6 float-left">
+    <div class="col-lg-6 float-right">
         <h1 class="mt-5">수강 리스트</h1>
         <table class="table mt-3">
           <thead>
             <tr>
               <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
+              <th>강의명</th>
+              <th>교수명</th>
+              <th>비고</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td>리더와 자기관리</td>
+              <td>김재현</td>
+              <td></td>
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
+              <td>심리학의이해</td>
+              <td>이시현</td>
+              <td></td>
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+              <td>실용한문</td>
+              <td>홍길동</td>
+              <td></td>
             </tr>
           </tbody>
         </table>
     </div>
+    <button type="submit" class="btn btn-primary float-right mr-3" >추가</button>
+    <button type="submit" class="btn btn-primary float-right mr-3" data-confirm="정말 삭제하시겠습니까?" >삭제</button>
 </div>
 <footer class="text-center">
 	<div class="">
     	<div class="container">
-        	<p> Team: 권현우 | <a href="#"></a> 이철승 | <a href="#">오제웅</a></p>
+        	<p> Team: 권현우 | <a href="#"></a> 이철승 | <a href="#">김동욱</a></p>
         	<p>Copyright &copy; 2017 </p>
         </div>
     </div>	
