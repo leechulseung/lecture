@@ -7,20 +7,38 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/home/main">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/board/lb">강의평가</a>
+      <li class="nav-item">
+        <a class="nav-link active" href="/board/lb">강의평가</a>
       </li>      
       <li class="nav-item">
         <a class="nav-link" href="/board/cb">자유게시판</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/board/qb">Q&A 게시판</a>
-      </li>     
-      <li class="nav-item">
-        <a class="nav-link" href="/mypage/mp">내정보</a>
-      </li>   
+      </li>
+      
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <a class="nav-link" href="/mypage/mp">내정보</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#"><%=current_user.email%></a>
+        </li>
+        
+        <% if current_user.admin %>
+          <li class="nav-item">
+            <a class="nav-link" href="#">관리자</a>
+          </li>
+        <% end %>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/users/sign_out" data-method="delete">로그아웃</a>
+        </li>
+      <%end%>
+      
     </ul>
   </div>
 </nav>
@@ -79,19 +97,21 @@
           <table class="table">
             <thead class="thead-default">
                 <tr>
-                  <th>#</th>
+                  <th>과목코드</th>
                   <th>강의명</th>
-                  <th><%=@post.title %></th>
+                  <th>교수명</th>
+                  <th>시간</th>
                 </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">#</th>
-                  <td>교수명</td>
-                  <td><%=@post.name.html_safe%></td>
-                </tr>
-              </tbody>
-             </table>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><%=@post.class_code%></th>
+                <td><%=@post.title %></td>
+                <td><%=@post.name.html_safe%></td>
+                <td><%=@post.gp%></td>
+              </tr>
+            </tbody>
+          </table>
     <div class="container clearfix">
         <form action="/board/lshow/<%= @pname %>/<%= @post.id %>/lcomment/lcom_create">
           <div class="form-group">

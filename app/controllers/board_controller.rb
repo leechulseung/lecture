@@ -13,8 +13,10 @@ class BoardController < ApplicationController
   def lcreate # 강의 개설
     @post = params[:bbs].capitalize.constantize.new
     #constantize함수로 상수화를 통해 변수를 상수로만들고, 객체를 생성할 수 있게 된다.
+    @post.class_code = params[:class_code]
     @post.title = params[:title]
     @post.name = params[:contents]
+    @post.gp = params[:gp]
     @post.save
     
     redirect_to "/board/#{params[:bbs]}"
