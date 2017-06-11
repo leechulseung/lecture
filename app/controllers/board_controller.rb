@@ -6,6 +6,20 @@ class BoardController < ApplicationController
     @post = Lbbs1.all
   end
   
+  def ledit # 편집 뷰어 
+    @post = @post = params[:bbs].capitalize.constantize.find(params[:bbs_id])
+    @bbs = params[:bbs]
+  end
+  
+  def lupdate
+    @post = @post = params[:bbs].capitalize.constantize.find(params[:bbs_id])
+    #constantize함수로 상수화를 통해 변수를 상수로만들고, 객체를 생성할 수 있게 된다.
+    @post.title = params[:title]
+    @post.name = params[:contents]
+    @post.save
+    
+    redirect_to "/board/#{params[:bbs]}"
+  end
   def lnew # 강평 개설 뷰
     @bbs = params[:bbs]
   end

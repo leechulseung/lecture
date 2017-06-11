@@ -112,9 +112,10 @@
 	  			<div class="card-block">
 	    			<h4 class="card-title" style="font-size: 1.2rem"><%= p.title %></h4>
 	    			<p class="card-text"><%= p.name.html_safe %></p>
-	    			<a href="/board/lshow/lbbs1/<%= p.id %>" class="btn btn-primary">평가</a>
+	    			<a href="/board/lshow/lbbs1/<%= p.id %>" class="btn btn-primary float-left">평가</a>
 	    			<% if current_user.admin %>
-	    				<a href="/board/ldestroy/lbbs1/<%= p.id %>" class="btn btn-primary float-right">폐강</a>
+	    			<a href="/board/ledit/lbbs1/<%= p.id %>" class="btn btn-primary float-left ml-5">수정</a>
+	    			<a href="/board/ldestroy/lbbs1/<%= p.id %>" class="btn btn-primary float-right">폐강</a>
 	    			<%end%>
 	  			</div>
 				</div>
