@@ -25,6 +25,16 @@ Rails.application.routes.draw do
   #Q&A 글쓰기
   get '/board/newqb' => 'board#newqb'
   post '/board/qcreate' => 'board#qcreate'
+  #Q&A삭제 
+  post '/board/qdestroy/:board_qid' => 'board#qdestroy'
+  #Q&A show
+  get '/board/qshow/:board_qid' => 'board#qshow'
+  #Q&A 수정
+  get '/board/qedit/:board_qid' => 'board#qedit'
+  post '/board/qupdate/:board_qid' => 'board#qupdate'
+  #Q&A 댓글
+  post '/board/qshow/:board_id/qcoment/qcom_create' => 'qcoment#qcom_create'
+  post '/board/qshow/:board_id/qcoment/qcom_destroy/:qcom_id' => 'qcoment#qcom_destroy'
   
   #자유게시판show
   get '/board/cshow/:board_id' => 'board#cshow'
@@ -38,6 +48,9 @@ Rails.application.routes.draw do
   get '/board/cedit/:board_id' => 'board#cedit'
   post '/board/cupdate/:board_id' => 'board#cupdate'
   
+  #자유게시판 댓글
+  post '/board/cshow/:board_id/ccoment/ccom_create' => 'ccoment#ccom_create'
+  post '/board/cshow/:board_id/ccoment/ccom_destroy/:ccom_id' => 'ccoment#ccom_destroy'
    #강의평가 게시판
   ## 게시판 URL
   get '/board/lb' #교양 게시판 

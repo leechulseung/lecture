@@ -19,6 +19,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
+        
         <a class="nav-link" href="/home/main">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -71,8 +72,8 @@
       <% @qbb.each do |x| %>
         <tr>
           <th scope="row"><%= i %></th>
-          <td><a href="/posts/show/<%= x.id %>"><%= x.title %></a></td>
-          <td><a href="/posts/show/<%= x.id %>"><%= x.content.html_safe%></a></td>
+          <td><a href="/board/qshow/<%= x.id %>"><%= x.title %></a></td>
+          <td><a href="/board/qshow/<%= x.id %>"><%= x.content.html_safe%></a></td>
           <td><%= x.ids %></td>
         </tr>
         <% i+=1 %>

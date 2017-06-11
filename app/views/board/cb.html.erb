@@ -64,7 +64,7 @@
     <tr>
       <th></th>
       <th>제목</th>
-      <th>내용</th>
+      <!--<th>내용</th>-->
       <th>닉네임</th>
     </tr>
   </thead>
@@ -74,7 +74,7 @@
       <tr>
         <th scope="row"><%= i %></th>
         <td><a href="/board/cshow/<%= x.id %>"><%= x.title %></a></td>
-        <td><a href="/board/cshow/<%= x.id %>"><%= x.content.html_safe %></a></td>
+        <!--<td><a href="/board/cshow/<%= x.id %>"><%= x.content.html_safe %></a></td>-->
         <td><%= x.ids %></td>
       </tr>
       <% i+=1 %>

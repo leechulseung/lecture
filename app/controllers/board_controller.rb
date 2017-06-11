@@ -35,6 +35,7 @@ class BoardController < ApplicationController
   
   ## 자유게시판 
   
+  
   def cb #자유게시판
     @cbb = Cbb.all
   end
@@ -43,7 +44,7 @@ class BoardController < ApplicationController
       @cbbs = Cbb.new
       @cbbs.title = params[:title]
       @cbbs.content = params[:contents]
-      @cbbs.user_id = current_user.id
+      #@cbbs.user_id = current_user.id
       @cbbs.save
       redirect_to '/board/cb'
   end
@@ -71,7 +72,11 @@ class BoardController < ApplicationController
   
   def cshow #자유게시판 각각의 show
     @cbbs = Cbb.find(params[:board_id])
+    @ccom = Ccomment.where(cbb_id: params[:board_id])
   end 
+  
+  
+  
   
   #질문게시판
   def qb #질문 게시판
@@ -82,7 +87,7 @@ class BoardController < ApplicationController
         @qbb = Qbb.new
         @qbb.title = params[:title]
         @qbb.content = params[:contents]
-        @qbb.user_id = current_user.id
+       # @qbb.user_id = current_user.id
         @qbb.save
         
         redirect_to '/board/qb'
@@ -93,16 +98,27 @@ class BoardController < ApplicationController
   
   
   def qshow #Q&A 각각의 show
+    @qbbs = Qbb.find(params[:board_qid])
+    @qcom = Qcom.where(qbb_id: params[:board_qid])
   end
   
   
   def qdestroy #Q&A 삭제
+    @qbbs = Qbb.find(params[:board_qid])
+    @qbbs.destroy
+    redirect_to '/board/qb'
   end
   
   def qedit
+    @qbbs = Qbb.find(params[:board_qid])
   end
 
   def qupdate
+    @qbbs = Qbb.find(params[:board_qid])
+    @qbbs.title = params[:input_title]
+    @qbbs.content = params[:input_content]
+    @qbbs.save
+    redirect_to "/board/qshow/#{@qbbs.id}"
   end
   
 end
