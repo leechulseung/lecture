@@ -1,4 +1,5 @@
 class LcommentController < ApplicationController
+    before_action :authenticate_user!
     def lcom_create
         @com = Lcom.new
         @com.content = params[:content]

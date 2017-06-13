@@ -22,6 +22,7 @@ class BoardController < ApplicationController
   end
   def lnew # 강평 개설 뷰
     @bbs = params[:bbs]
+    pp params
   end
   
   def lcreate # 강의 개설

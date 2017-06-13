@@ -44,18 +44,19 @@ Rails.application.routes.draw do
   get '/board/lbbs1' => 'board#lb' #크리에이트 리다이렉트를 위하여 만든 url
   
   #CRUD URL
-  get '/board/lnew/:bbs' => 'board#lnew'
-  get '/board/ledit/:bbs/:bbs_id' => 'board#ledit'
-  get '/board/lcreate/:bbs' => 'board#lcreate'
+  get '/board/lnew/:bbs'            => 'board#lnew'
+  get '/board/ledit/:bbs/:bbs_id'   => 'board#ledit'
+  get '/board/lcreate/:bbs'         => 'board#lcreate'
   get '/board/lupdate/:bbs/:bbs_id' => 'board#lupdate'
   get '/board/ldestroy/:bbs/:bbs_id'=> 'board#ldestroy'
-  get '/board/lshow/:bbs/:bbs_id'=> 'board#lshow'
+  get '/board/lshow/:bbs/:bbs_id'   => 'board#lshow'
   
   #COMMENT URL
   get '/board/lshow/:bbs/:bbs_id/lcomment/lcom_create' => 'lcomment#lcom_create'
   get '/board/lshow/:bbs/:bbs_id/lcomment/lcom_destroy/:com_id' => 'lcomment#lcom_destroy'
 
   # root 'home#index'
+  # 메인화면
   root 'home#main'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

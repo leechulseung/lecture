@@ -115,7 +115,7 @@
 	    			<a href="/board/lshow/lbbs1/<%= p.id %>" class="btn btn-primary float-left">평가</a>
 	    			<% if current_user.admin %>
 	    			<a href="/board/ledit/lbbs1/<%= p.id %>" class="btn btn-primary float-left ml-5">수정</a>
-	    			<a href="/board/ldestroy/lbbs1/<%= p.id %>" class="btn btn-primary float-right">폐강</a>
+	    			<a href="/board/ldestroy/lbbs1/<%= p.id %>" class="btn btn-primary float-right" data-confirm="진짜로 삭제 하시겠어요?">폐강</a>
 	    			<%end%>
 	  			</div>
 				</div>
