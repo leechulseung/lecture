@@ -58,7 +58,9 @@ Rails.application.routes.draw do
   
   #CRUD URL
   get '/board/lnew/:bbs' => 'board#lnew'
+  get '/board/ledit/:bbs/:bbs_id' => 'board#ledit'
   get '/board/lcreate/:bbs' => 'board#lcreate'
+  get '/board/lupdate/:bbs/:bbs_id' => 'board#lupdate'
   get '/board/ldestroy/:bbs/:bbs_id'=> 'board#ldestroy'
   get '/board/lshow/:bbs/:bbs_id'=> 'board#lshow'
   
